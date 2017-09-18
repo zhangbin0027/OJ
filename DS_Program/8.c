@@ -27,7 +27,7 @@ void Del_X(LNode *head,int i)
 	}
 	p->next=q->next;
 	free(q);
-}
+
 	2.删除自身结点，采用插入前驱结点项类似的方法，将指针p所指向结点的数据域与指针q所指向结点的数据域进行一次交换p->data=q->data,这样就又变成了删除指针q所指向的结点的操作
 void Del_X(LNode *head,int i)
 {
