@@ -8,7 +8,7 @@ int Judgesym(DNode *head){
 		if(p->data==q->data){
 			p=p->next;
 			q=q->piror;	
-		}else{
+ 		}else{
 			break;
 		}
 	}
