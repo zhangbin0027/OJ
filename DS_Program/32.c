@@ -11,18 +11,52 @@ LinkList(LNode *head){
 	LNode *prep=head;
 	LNode *p=head->next;
 	LNode *premin=head;
-	LNode *min=head->next;
+	LNode *pre=head->next;
+	
 	while(p!=head){
 		if(min->data>p->data){
 			premin=pre;
 			min=p;
-		}
+		}		
 		pre=p;
 		p=p->next;
 	}
 	printf("%4d",min->data);
 	return premin;
 }
+//删除最小值结点
+void DelMin(LNode *pre){
+	LNode *p=pre->next;
+	pre->next=p->next;
+	free(p);
+}
 
-
-
+//循环调用直至为空
+while(head->next!=NULL){
+	Pre=FindMin(LNode);
+	DelMin(pre);		
+}
+//查找最小值结点
+int Search(LNode *head){
+	int LNode *pre=head;
+	int LNode *p=head->next;
+	int LNdoe *premin=head;
+	int LNode *min=head->next;
+		
+	while(p!=head){
+		if(min->data>p->data){
+			premin=pre;	
+			min=p;		
+		}
+		pre=p;	
+		p=p->next;
+	}
+	printf("%4d",p->min);
+	return 0;
+}
+//删除最小结点
+int DelMin(LNode *pre){
+	LNode *p=pre->next;
+	pre>next=p->next;
+	free(p);	
+}
