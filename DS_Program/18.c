@@ -81,7 +81,7 @@ void LevelOrder(BiTNode *T){
 }
 
 void InitQueue(SqQueue *Q){
-	Q->front=0;
+	Q->fron=0;
 	Q->rear=0;
 }
 

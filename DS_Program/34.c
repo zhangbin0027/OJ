@@ -85,12 +85,6 @@ int Pop(SqStack *s,ElemType x,int n){
 			*s=s->data[s->top--];
 			break;
 		case 1:
-			if(s->top[1]==MaxSize){
-				printf("The stack[1] is empty!\n");
-		}
-		*x=s->data[s->top[1]++];
-		break;
+			if(s->top[])
 	}
-	return ;
 }
-
