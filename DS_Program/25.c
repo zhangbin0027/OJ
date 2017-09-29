@@ -4,7 +4,7 @@ LinkList Union(LNode *head1,*head2){
 	LNode *p=head1->next;//p节点指向A链表的头节点的下一个结点
 	LNode *q=head2->next;//q结点指向B链表的头节点的下一个结点
 	while(p&&q){//如果p和q不空
-		if(p->date==q->data){//p的数据和q的数据相等
+		if(p->data==q->data){//p的数据和q的数据相等
 			prep=p;
 			p=p->next;
 			q->q->next;
@@ -18,7 +18,7 @@ LinkList Union(LNode *head1,*head2){
 		while(p){//若单链表B中还有剩余
 			prep->next=p->next;
 			free(p);
-			p=prep=>next;
+			p=prep->next;
 		}
 	}
 	return head;

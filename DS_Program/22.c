@@ -16,7 +16,6 @@ void SwapLRPreTree(BiTNode *T){
 	SwapLRPreTree(T->lchild);
 	SwapLRPreTree(T->rchild);
 }
-
 //从下往上的交换过程类似于后续遍历的过程
 void SwapLRPostTree(BiTNode *T){
 	BiTNode *temp;

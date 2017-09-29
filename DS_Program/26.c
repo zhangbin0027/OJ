@@ -1,7 +1,7 @@
 //求树的高度
 int TreeDepth(Node *t){
 	int hl,hr,h;
-	if(t!=NULL){
+	if(T!=NULL){
 		hl=TreeDepth(t->left);
 		hr=TreeDepth(t->right);
 		h=hl>hr?hl:hr;
@@ -28,7 +28,7 @@ int CompTree(Node *tree1,Node *tree2){
 		return 1;
 	else if(tree1==NULL||tree2==NULL)
 		return 0;
-	if(tree1>data!=tree2->data)
+	if(tree1->data!=tree2->data)
 		return 0;
 	if(CompTree(tree1->left,tree2->left)==1&&CompTree(tree1->right,tree2->right)==1)
 		return 1;
