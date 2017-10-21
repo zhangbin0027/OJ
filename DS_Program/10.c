@@ -81,7 +81,7 @@ void Del_Min(LNode *head)
 	}
 
 	printf("Delete Node:%4d\n",minp->data);
-	minpre->next-minp->next;
+	minpre->next=minp->next;
 	free(minp);
 }
 

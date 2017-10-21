@@ -16,3 +16,5 @@ void RangeDel(LNode *head,Elemtype t,Elemtype s){
 		}
 	}
 }
+
+

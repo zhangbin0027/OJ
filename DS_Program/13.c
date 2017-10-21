@@ -26,7 +26,7 @@ typedef struct LNode{
 }LNode,*LinkList;
 
 LinkList CreatList(LNode*);
-void DelRrepeat(LNode*);
+void DelRepeat(LNode*);
 void Print(LNode*);
 
 int main(int argc,char* argv[])
@@ -37,7 +37,7 @@ int main(int argc,char* argv[])
 	head=CreateList(head);
 	Print(head);
 
-	DelRrepea(head);
+	DelRepeat(head);
 
 	Print(head);
 	return 0;			
@@ -82,7 +82,7 @@ void Print(LNode *head)
 {
 	LNode *p=head->next;
 	while(p){
-		printf("%4d",p->data)'
+		printf("%4d",p->data);
 		p=p->next;
 	}
 	printf("\n");

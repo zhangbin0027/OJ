@@ -26,7 +26,7 @@ void SwapLRPostTree(BiTNode *T){
 	SwapLRPostTree(T->rchild);
 	temp=T->lchild;
 	T->lchild=T->rchild;
-	T->rchild=Ttemp;		
+	T->rchild=temp;		
 }
 
 

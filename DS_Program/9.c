@@ -1,7 +1,7 @@
 //在带头结点的单链表L中，删除所有值为x的结点，并释放其空间，假设值为x的结点不唯一，试编写算法实现以上的操作
 //本算法在无序单链表中删除满足某种条件的所有结点，这里的条件是结点的值为x，条件可以任意给定，比如要求删除位于min和max之间的所有结点则只需将if语句改为if(p->data>min&&p->data<max)
 //算法实现
-void DelNodeX(LNode *head,Elemtype x){
+/*void DelNodeX(LNode *head,Elemtype x){
 	LNode *pre=head;
 	LNode *p=head->next;
 	while(p!=NULL){
@@ -15,7 +15,7 @@ void DelNodeX(LNode *head,Elemtype x){
 		}
 	}
 }
-
+*/
 //具体代码
 #include <stdio.h>
 #include <stdlib.h>

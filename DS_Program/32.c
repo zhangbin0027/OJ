@@ -9,54 +9,31 @@ while(head->next!=head){
 //找到最小值结点,并打印该结点
 LinkList(LNode *head){
 	LNode *prep=head;
-	LNode *p=head->next;
-	LNode *premin=head;
-	LNode *pre=head->next;
-	
-	while(p!=head){
-		if(min->data>p->data){
-			premin=pre;
-			min=p;
-		}		
-		pre=p;
-		p=p->next;
-	}
-	printf("%4d",min->data);
-	return premin;
-}
-//删除最小值结点
-void DelMin(LNode *pre){
-	LNode *p=pre->next;
-	pre->next=p->next;
-	free(p);
+		
 }
 
-//循环调用直至为空
-while(head->next!=NULL){
-	Pre=FindMin(LNode);
-	DelMin(pre);		
-}
-//查找最小值结点
-int Search(LNode *head){
+
+int Search(LNode *head,ElemType data){
 	int LNode *pre=head;
 	int LNode *p=head->next;
-	int LNdoe *premin=head;
-	int LNode *min=head->next;
-		
-	while(p!=head){
-		if(min->data>p->data){
-			premin=pre;	
-			min=p;		
+	int min=0;
+	while(p){
+		min=p->data;
+		if(p->next->data<p->data){
+			min=p->next;
+			p=p->next;
 		}
-		pre=p;	
-		p=p->next;
+		return min;
 	}
-	printf("%4d",p->min);
-	return 0;
 }
-//删除最小结点
-int DelMin(LNode *pre){
-	LNode *p=pre->next;
-	pre>next=p->next;
-	free(p);	
+int DeleteMin(LNode *head,int min){
+	int LNdoe *p=min;
+	int LNode *pre=p->piror;
+	while(p){
+		pre->next=p->next;
+		p=p->next;
+		free(p);
+	}
+	Search(min);
+	return head;
 }

@@ -62,4 +62,3 @@ void AncestorBiTree(BiTNode *T){
 			}
 		}
 	}
-}
