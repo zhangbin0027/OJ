@@ -22,13 +22,11 @@ while(S.top!=-1){
 #define MaxSize 10
 
 typedef int Elemtype;
-
-typedef struct {
+typedef struct{
 	Elemtype data[MaxSize];
 	int front,rear;
 }SqQueue;
-
-typedef Struct {
+typedef struct{
 	Elemtype data[MaxSize];
 	int top;
 }SqStack;
@@ -57,7 +55,7 @@ int main(int argc,char *argv[]){
 	}
 	while(Q.front!=Q.rear){
 		DeQueue(&Q,&x);
-		scanf("%d",&x);
+		EnStack(&S,x);
 	}
 	InitQueue(&Q);
 	while(S.top!=-1){
@@ -78,7 +76,7 @@ void EnQueue(SqQueue *Q,Elemtype x){
 }
 //出队
 void DeQueue(SqQueue *Q,Elemtype *x){
-	if(Q->front==Q.rear){
+	if(Q->front==Q->rear){
 		printf("The Queue is empty!\n");
 	}
 	*x=Q->data[Q->front++];
@@ -92,7 +90,7 @@ void EnStack(SqStack *S,Elemtype x){
 	S->data[++S->top]=x;
 }
 //出栈
-void DeStack(SqStack *S,ElemType *x){
+void DeStack(SqStack *S,Elemtype *x){
 	if(S->top=-1){
 		printf("The stack is empty!\n");
 		return;
