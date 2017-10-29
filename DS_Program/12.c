@@ -79,9 +79,5 @@ void Delts(LNode*head,ElemType t,ElemType s){
 }
 void Print(LNode *head){
 	LNode *p=head->next;
-	while(p){		
-		printf("%4d",p->data);
-		p=p->next;
-	}			
-	printf("\n");
+
 }

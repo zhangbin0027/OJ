@@ -36,7 +36,7 @@ int Push(SqStack *s,ElemType data,int n){
 	}		
 	switch(n){
 		case 0:s->data[++s.top[0]]=x;break;
-		case 1:s->data[++s.top[1]]=x;break;
+		case 1:s->data[--s.top[1]]=x;break;
 	}
 	return 0;
 }
