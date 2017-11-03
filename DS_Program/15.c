@@ -56,7 +56,7 @@ int QueueEmpty(SqStack *S1,SqStack *S2){
 #include <stdlib.h>
 
 #define MaxSize 10
-tyoedef int Elemtype;
+typedef int Elemtype;
 typedef struct{
 	Elemtype data[MaxSize];
 	int top;

@@ -66,7 +66,7 @@ void LevelOrder(BiTNode *T){
 	InitQueue(&Q);
 
 	BiTNode *p=T;
-	EeQueue(&Q,p);
+	EnQueue(&Q,p);
 	
 	while(isEmptyQueue(&Q)!=0){
 		p=DeQueue(&Q);

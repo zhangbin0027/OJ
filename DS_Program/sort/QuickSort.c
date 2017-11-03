@@ -8,10 +8,9 @@ void QuickSort(ElemType A[],int low,int high){
 }
 //快速排序的算法关键在于划分操作
 //假设每次总是以当前表中的第一个元素作为枢轴值对表进行划分,则必须将表中比枢轴值大的元素向右移动，比枢轴值小的元素向左移动，使得一趟操作后，表中的元素被枢轴值一分为二。
-void QuickSort(ElemTyped A[],int low,int high){
+void QuickSort(ElemType A[],int low,int high){
 	ElemType pivort=A[low];//将当前表中的第一个元素设为枢轴值,对表进行划分
 	while(low<high){//循环跳出条件
-		while(low<high){
 			while(low<high&&a[high]>=pivot)
 				--high;
 				A[low]=A[high];//将比枢轴值小的元素移动到左端

@@ -125,7 +125,7 @@ int CntHeight(BiTNode *T){
 		}
 		if(Q->front==last){
 			cnt++;
-			lass=Q.rear;
+			last==Q.rear;
 		}
 		
 	}
