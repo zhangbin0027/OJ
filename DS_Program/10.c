@@ -90,3 +90,113 @@ void Print(LNode *head)
     }
     printf("\n");
 }
+//有一个带头结点的循环单链表，设计一个算法反复找出单链表中的最小值，并输出，然后将该结点删除，直到单链表为空为止
+//循环单链表为空的条件是p->next=p,即指向自身时为空
+//先循环遍历每次找出最小值结点
+void Search_Min(LNode *head){
+	LNode *pre=head;//p为工作指针,pre为当前结点的前驱结点
+	LNode *p=head->next;
+	LNode *minpre=head;//用minp记录最小值结点
+	LNode *minp=head->next;//指向minp的前驱结点	
+	while(p!=head){
+		if(minp->data<p->data){
+			minpre=pre;//若当前的最小值结点小于p结点，则进行交换
+			min=p;
+		}
+		pre=p;//若未找到则继续向后查找
+		p=p->next;
+	}
+	printf("%4d",min->data);
+	return premin;
+}
+
+
+//删除最小值结点
+void Del_Min(LNode *head){
+	LNode *p=pre->next;
+	pre->next=p->next;
+	free(p);		
+}
+
+//进行循环调用删除函数,直至为空
+while(head->next!=head){
+	Pre=Search_Min(head);
+	Del_Min(pre);
+}
+
+//具体代码
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int Elemtype;
+typedef struct LNode{
+	ElemType data;
+	struct LNode *next;
+}LNode,*LinkList;
+
+LinkList CreatList(LNode *);
+LinkList FindMin(LNode*);
+void DelMin(LNode*);
+void Print(LNode*);
+
+int main(int argc,char *argv[]){
+	LNode *head;
+	head=(LNode*)malloc(sizeof(LNode));
+	head->next=head;
+	head=CreatList(head);
+	Print(head);
+	LNode *pre=head;
+	while(head->next!=head){
+		pre=FindMin(head);
+		DelMin(pre);
+	}
+	Print(head);
+	free(head);
+	return 0;
+}
+
+LinkList CreatList(LNode* head){
+	LNode *L;
+	ElemType x;
+	scanf("%d",&x);
+	while(x!=999){
+		L=(LNode*)malloc(sizeof(LNode));
+		L->data=x;
+		L->next=head->next;
+		head->next=L;
+		scanf("%d",&x);
+	}
+	return head;
+}
+
+LinkList FindMin(LNode *head){
+	LNode *pre=head;
+	LNode *p=head->next;
+	LNode *premin=head;
+	LNode *min-head->next;
+	while(p!=head){
+		if(min->data>p->data){
+			premin=pre;
+			min=p;
+		}
+		pre=p;
+		p=p->next;
+	}
+	printf("%4d",min->data);
+	return premin;
+}
+
+void DelMin(LNode *pre){
+	LNode *p=pre->next;
+	pre->next=p->next;
+	free(p);
+}
+
+void Print(LNode *head){
+	LNode *p=head->next;
+	while(head!=p){
+		printf("%4d",p->data);
+		p=p->data;
+	}
+	printf("\n");
+}
