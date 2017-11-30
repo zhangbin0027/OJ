@@ -572,3 +572,651 @@ void Del_Min(LNode*){
 	}
 }
 
+void Del_x(LNode *head,ElemType data){
+	LNode *pre=head;
+	LNode *p=head->next;
+	while(p){
+		if(pre->data==x){
+			pre->next=p->next;
+			free(p);
+			p=pre->next;
+		}
+		pre=p;
+		p=p->next;
+	}
+	return head;
+}
+
+typedef struct DNode{
+	ElemType data;
+	struct LNode *piror,next;
+}DNode,*DLinkList;
+
+DLinkList Creatlist(DNode *head){
+	DNode *s;
+	ElemType x;
+	scanf("%d",&x);
+	while(x!=999){
+		s=(DNode*)malloc(sizeof(DNode));
+		s->data=head->next;
+		if(head->next){
+			head->next->piror=s;
+		}
+		s->piror=head;
+		head->next=s;
+		scanf("%d",&x);
+	}
+	return head;
+}
+
+void PreOrder(BiTNode *T){
+	SqStack S;
+	InitSqStack(&S);
+	
+	BiTNode *p=T;
+	Push(&S,p);
+	while(isEmptySqstack!=0){
+		Pop(&S,p);
+		if(p->rchild!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}
+		if(p->lchild!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}
+	}
+}
+	
+void InOrder(BiTNode *T){
+	SqStack S;
+	Init SqStack(&S);
+	
+	BiTNode *p=T;
+	while(isEmptySqStack!=0){
+		if(p->lchild!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}
+		GetTop(&S,p);
+		if(p->rchild!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}
+	}
+}
+
+int cntHeight(BiTNode *T){
+	int lh,rh;
+	if(T==NULL){
+		return 0;
+	}
+	lh=CntHeight(T->lchild);
+	rh=CntHeight(T->rchild);
+	return lh>rh?lh:rh; 
+}
+
+void Cntheight(BiTNode *T){
+	BiTNode *p=T;
+	SqQueue Q;
+	
+	InitQueue(&Q);
+	EnQueue(&Q,p);
+	
+	int cnt=0;
+	int last=1;
+	
+	while(Q!=NULL){
+		p=DeQueue(&Q);
+		if(p->lchild!=NULL){
+			EnQueue(&Q,p->lchild)
+		}
+		if(p->rhcild!=NULL){
+			EnQueue(&Q,p->rchild)
+		
+		}
+	}
+}
+
+//二叉树的非递归遍历
+void PreOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+	
+	BiTNode *p=T;
+	Push(&S,p);
+	while(IsEmptyStack(&S)!=0){
+		p=Pop(&S);
+		printf("%c",p->data);
+		if(p->rchild!=NULL){
+			Push(&S,p->rchild);
+		}
+		if(p->lchild!=NULL){
+			Push(&S,p->lchild);
+		}
+	}
+}
+
+void PreOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+	
+	BiTNode *p=T;
+	Push(&S,p);
+	while(IsEmptyStack(&S)!=0){
+		p=Pop(&S);
+		printf("%c",p->data);
+		if(p->rchild!=NULL){
+			Push(&S,p->rchild);
+		}
+		if(p->lchild!=NULL){
+			Push(&S,p->lchild);
+		}
+	}
+}
+
+void InOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+	
+	BiTNode *p=T;
+	while(p||IsEmpty(&S)!=0){
+		if(p!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			p=Pop(&S);
+			printf("%c",p->data);
+			p=p->rchild;
+		}
+	}
+}
+
+void InOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+		
+	BiTNode *p=T;
+	while(p||IsEmpty(&S)!=0){
+		if(p!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			p=Pop(&S);
+			printf("%c",p->data);
+			p=p->rchild;
+		}
+	}
+}
+
+void PostOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+	
+	BiTNode *p=T;
+	BiTNode *p=NULL;
+	
+	while(p||IsEmtpyStack(&S)!=0){
+		if(p!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			p=GetTop(&S);
+			if(p->rchild!=NULL&rchild!=r){
+				p=p->rchild;
+				Push(&S,p);
+				p=p->lchild;
+			}else{
+				p=Pop(&S);
+				printf("%c",p->data);
+				r=p;
+				p=NULL;
+			}
+		}
+	}
+}
+
+void PostOrder(BiTNode *T){
+	SqStack S;	
+	InitSqStack(&S);	
+
+	BiTNode *p=T;
+	BiTNode *r=NULL;
+	
+	while(p||IsEmptySqStack!=0){
+		if(p!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			P=GetTop(&S,p);
+			if(p->rchild!=NULL&&p!=r){
+				p=p->rchild;
+				Push(&S,p);
+				p=p->lchild;
+		}else{
+			P=Pop(&S);
+			printf("%c",p->data);
+			r=p;
+			p=NULL;
+		}
+	}
+}
+
+void PostOrder(BiTNode *T){
+	SqStack S;
+	InitSqStack(&S):
+	
+	BiTNode *p=T;
+	BiTNode *r=NULL;
+		
+	while(p||IsEmptySqStack!=0){
+		if(p){
+			Push(&S,p);
+			p=p->lchild;		
+		}else{(p->rchild!=NULL||p->rchild!=r){
+			p=p->rchild;
+			Push(&S,p);
+			p=p->lchlid;
+		}else{
+			P=pop(&S,p);
+			printf("%c",p->data);
+			r=p;
+			p=NULL;
+		}
+	}
+}
+
+
+void PostOrder(BiTNode *T){
+	SqStack S;
+	InitStack(&S);
+	
+	BitNode *p=T;
+	BiTNode *p=NULL;
+	
+	while(p||IsEmptyStack(&S)!=0){
+		if(p!=NULL){
+			Push(&S,p)
+			p=p->lchild;
+		}else{
+			P=GetTop(&S);
+			if(p->rchild!=NULL&rchild!=r){
+				p=p->rchild;
+				Push(&S,p);
+				p=p->lchild;
+			}else{
+				P=pop(&S);
+				printf("%c",p->data);
+				r=p;
+				p=NULL;
+			}
+		}
+	}
+}
+
+int CntHeight_recursive(BiTNode *T){
+	int lh,rh;
+	if(T=NULL){
+		return 0;
+	}
+	lh=CntHeight_recursive(T->lchild);
+	rh=CntHeight_revursive(T->rchild);
+	return lh>rh?lh+1:rh+1;
+}
+
+void Bstheight(BitNode *T){
+	int lh;
+	int rh;
+	if(T==NULL){
+		return 0;
+	}
+	lh=CntHeight_recursive(T->lchild);
+	rh=CntHeighy_recursive(T->rchild);
+	return lh>rh?lh+1:rh+1;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+#define MaxSize 100
+
+typedef struct{
+	ElemType data[MaxSize];
+	struct BiTNode *T;
+}BiTNode,*BiTre;
+
+typedef struct{
+	ElemType data;
+	int front,rear;
+}SqQueue;
+typedef struct{
+	ElemType data;
+	int top;
+}SqStack;
+
+int main(int argc,char *argv[]){
+
+}
+void BST_weight(BiTNode *T){
+	SqQueue Q;
+	InitQueue(&Q);
+	SqStack S;
+	InitStack(&S);
+
+	BiTNode *p=T;
+	int level[MaxSize]={0};
+	if(p==NULL){
+		return 0;
+	}
+	while(p||isEmptyQueue(&Q)!=0){
+		DeQueue(&Q,p);
+		if(p->lchild!=NULL){
+			EnQueue(&Q,p->lchild);
+		}
+		if(p->rchild!=NULL){
+			EnQueue(&Q,p->rchild);
+		}
+		if(Q.front==last){
+			level[cnt++]=Q.rear-Q.front;
+			last=Q.rear
+		}
+	}
+	int max[level];
+	for(i=0;i<n;i++){
+		if(level[i]>max)
+		max=level[i];
+	}	
+}
+
+typedef char ElemType;
+typedef struct BiTNode{
+	ElemType data;
+	struct BiTNode *lchild,*rchild;
+}BiTNode,*BiTree;
+
+typedef struct{
+	BiTNode *data[MaxSize];
+	int front,rear;
+}SqQueue;
+
+BiTNode *CreateBiTNode(BiTNode*);
+
+void InitQueue(SqQueue*);
+void EnQueue(SqQueue*,BiTNode*);
+BiTNode *DeQueue(SqQueue*,BiTNode*);
+int IsEmptyQueue(SqQueue*);
+
+void InitQueue(SqQueue*);
+void EnQueue(SqQueue*,BiTNode*);
+BiTNode* DeQueue(SqQueue*);
+int IsEmptyQueue(SqQueue*);
+
+int main(int argc,char *argv[]){
+
+	BiTNode *T=(BiTNode*)malloc(BiTNode);
+	T=CreateBiTree(T);
+	
+	PreOrder(T);
+	printf("\n");
+	int count;
+	count=CntHeight_recursive(T);
+	printf("%d\n",count);
+}
+
+BiTNode *CreateBiTree(BiTNode *T){
+	ElemType ch;
+	scanf("%c",&ch);
+	if(ch='#'){
+		return NULL;
+	}
+	T=(BiTNode*)malloc(sizeof(BiTNode));
+	T->data=ch;
+	T->lchild=CreateBiTree(T->lchild);
+	T->rchild=CreateBiTree(T->rchild);
+	return T;
+}
+
+int CntHeight(BiTNode *T){
+	int lh,rh;
+	if(T!=NULL){
+		return 0;
+	}
+	lh=....
+	rh=...
+	return 
+		lh>rh?lh+1:rh+1;
+		
+}
+
+int CntHeitht(BiTNode *T){
+	BiTNode *p=T;
+	int cnt=0,last=1;
+	SqQueue(Q,p);
+	InitQueue(&Q);
+	EnQueue(&Q,p);
+	
+	while(IsEmpty!=0){
+		p=DeQueue(&Q);
+		if(p->lchild!=NULL){
+			EnQueue(&Q,p->lchild);
+		}	
+		if(p->rchild!=NULL){
+			EnQueue(&Q,p->rchild);
+		}
+		if(Q->front==last){
+			cnt++;
+			last==rear;
+		}
+	}
+	return cnt;
+}
+
+int CntWidth(BiTNode *T){
+	BiTNode *p=T;
+	SqQueue Q;
+	
+	InitSqQueue(&Q);
+	EnQueue(&Q,p);
+	
+	int cnt=0;
+	int last=1;
+	
+	int level[MaxSize]={0};
+
+	while(IsEmptyQueue(&Q)!=0){
+		p=DeQueue(&Q);
+		if(p->lchild!=NULL){
+			EnQueue(&Q,p->lchild);
+		}
+		if(p->rchild!=NULL){
+			EnQueue(&Q,p->rchild);
+		}
+		if(Q.front=last){
+			level[cnt++]=Q.rear-Q.front;
+			last=Q.rear;
+		}
+	}
+	int max=level[0];
+	for(int i=0;i<cnt;i++){
+		if(max<level[i]){
+			max=level[i];
+		}
+	}
+	return max;
+}
+
+void SwapLRPreTree(BiTNode *T){
+	BiTNode *temp;
+	if(T==NULL){
+		return;
+	}
+	temp=T->lchild;
+	T->lchild=T->rchild;
+	T->rchild=temp;
+	SwapLRPreTree(T->lchild);
+	SwapLRPreeTree(T->rchild);
+}
+
+void AncestorX(BiTNode *T,ElemType x){
+	SqStack S;
+	InitStack(&S);
+	
+	BiTNode *p=T;
+	BiTNode *r=NULL;
+	
+	while(p||IsEmptyStack(&S)){
+		if(p!=NULL){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			p=GetTop(&S);
+			if(p->rchild!=NULL&&p->rchild!=r){
+				p=p->rchild;
+				Push(&S,p);
+				p=p->lchild;
+			}else{
+				p=Pop(&S);
+				if(p->data==x){
+					while(IsEmpty(&S)!=0){
+						p=Pop(&S);
+						printf("%c",p->data);
+					}	
+				}
+				r=p;
+				p=NULL;
+			}
+		}
+	}
+}
+
+void PostOrder(BiTNode *T){
+	BiTNode *p=T;
+	BiTNode *r=NULL;
+	
+	SqStack S;
+	InitStack(&S);
+		
+	SqStacK S1;
+	InitStack(&S1);
+	SqStack S2;
+	InitStack(&S2);
+	
+	int falg=1;
+	while(IsEmptyStack(&S)!=0||p!=NULL){
+		if(p){
+			Push(&S,p);
+			p=p->lchild;
+		}else{
+			p=GetTop:
+		}
+	}
+}
+
+void DelNode(LNode *head){
+	LNode *pre=head;
+	LNode *p=head->next;
+	
+	while(p){
+		pre->next=p->next;
+		p=p->next;
+		free(p);
+	}
+}
+
+void Merge(LNode *head1,LNode *head2){
+	LNode *p1=head1->next;
+	LNode *p2=head2->next;
+	
+	LNode *r;
+	head1->=NULL;
+	
+	while(p1!=NULL&&p2!=NULL){
+		if(p1->data=p2->data){
+			r=p1;//若A中结点小于B中结点，则将A中结点连接入结果表中
+			p1->next=head1->next;//利用头插法将A链入结果表中
+			head->next=p1->next;
+			p1=r;//重新返回结果值,继续比较
+		}else{//若B中元素小于A中元素
+			r=p2;
+			p2->next=head1->next;
+			head->next=p2->next;
+			p2=r;
+		}else if{
+			while(p1)//若A表中有剩余,将剩余结点删除
+				r=p1;
+				p1=p1->next;
+				free(p);
+		}else{
+			while(p2)
+				r=p2;
+				p2=p2->next;
+				free(p);
+		}
+		return head1;
+	}	
+}
+
+int JudgeBinary(DNode *head){
+	DNode *p=head->next;
+	DNode *q=head->piror;
+	while(p!=q&q->next!=p){
+		if(p->data==q->data){
+			p=p->next;
+			q=q->piror;
+		}else{
+			break;
+		}
+		if(p==q){
+			return 0;
+		}else{
+
+		return -1;
+		}
+	}
+}
+
+void Search_Exchange_Insert(ElemType A[],ElemTypex)
+{
+	int low=0;
+	int high=n-1;
+	int mid;
+	
+	while(low<=high){
+		mid=(low+high)/2;//找到中间位置
+		if(A[mid]==x)
+			break;
+		else if(A[mid]<x)
+			low=mid+1;
+		else high=mid-1;
+	}
+	if(A[mid]==x&&mid!=n-1){
+		t=A[mid];
+		A[mid]=A[mid+1];
+		A[mid+1]=t;
+	}
+	if(low>high){
+		for(i=n-1;i>highl;i--)
+		A[i+1]=x;
+	}
+}
+
+void Del_X(LNode *p,ElemType x){
+	if(p==NULL){
+		return;
+	}
+	LNode *q=p->next;
+	if(p->data=x){
+		if(q!=NULL){
+			p->data=q->data;
+			p->next=q->next;
+		}else{
+			p=NULL;
+		}
+		free(q);
+		Del_X(p,x);
+		}else{
+			Del_X(p->next,x);
+		}
+	}
+}

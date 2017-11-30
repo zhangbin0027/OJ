@@ -40,7 +40,7 @@ void PostOrder(BiTNode *T){
 	InitStack(&S);
 	
 	BiTNode *p=T;
-	BiTNode *p=NULL;
+	BiTNode *r=NULL;
 	
 	while(p||IsemptyStack(&S)!=0){
 		if(p!=NULL){

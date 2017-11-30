@@ -10,7 +10,7 @@ int main(){
 		}else if (a > c) {
 			printf("mid=%d\n", c);
 		}else {
-			printf("mid=%d", a);
+			printf("mid=%d\n", a);
 		}
 	}else if (a > c) {
 		printf("mid=%d\n", a);

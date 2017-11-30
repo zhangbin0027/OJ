@@ -22,7 +22,7 @@ int Push(SqStack *s,ElemType data){
 	if(s->top=MaxSize-1){
 		return 0;
 	}
-	s->data[++s->top]=x;
+	->data[++s->top]=x;
 	return 0;
 }
 //出栈操作
