@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution(object):
     # Set法
     def hasCycle(self, head):
@@ -18,6 +19,7 @@ class Solution(object):
             s.add(head)
             head = head.next
         return False
+
 
 class Solution2(object):
     # 快慢指针法
